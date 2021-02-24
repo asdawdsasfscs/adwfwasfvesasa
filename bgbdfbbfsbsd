@@ -336,13 +336,13 @@ table.insert(boxes, textName)
 			pcall(callback)
 		end)
 
-			function UpdateTextBox(textbox, newText)
-		for i,v in pairs(boxes) do
-		    if textbox == v then
-			TextBox.Text = newText
-		    end
+		function UpdateTextBox(textbox, newText)
+			for i,v in pairs(boxes) do
+				if textbox == v then
+				TextBox.Text = newText
+				end
+			end
 		end
-	end)
 		UICorner_13.CornerRadius = UDim.new(0, 5)
 		UICorner_13.Parent = TextBox
 		return text

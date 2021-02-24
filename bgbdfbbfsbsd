@@ -286,7 +286,8 @@ function UI:CreateUI(Name, GameName)
 		UICorner_5.Parent = Toggle
 	end
 
-	function UI:CreateTextButton(textName, forTab, boxtext , boxPlaceholderText ,callback)
+	local boxes = {}
+	function UI:CreateTextButton(textName, forTab, boxtext , boxPlaceholderText ,callback) -- text
 		local TextBoxButtonFrame = Instance.new("Frame")
 		local UICorner_12 = Instance.new("UICorner")
 		local Lable_4 = Instance.new("TextLabel")
@@ -302,6 +303,8 @@ function UI:CreateUI(Name, GameName)
 		TextBoxButtonFrame.Position = UDim2.new(0.037698254, 0, 0.0193464067, 0)
 		TextBoxButtonFrame.Selectable = true
 		TextBoxButtonFrame.Size = UDim2.new(0, 283, 0, 38)
+
+table.insert(boxes, textName)
 
 		UICorner_12.CornerRadius = UDim.new(0, 5)
 		UICorner_12.Parent = TextBoxButtonFrame
@@ -332,11 +335,19 @@ function UI:CreateUI(Name, GameName)
 			text = TextBox.Text
 			pcall(callback)
 		end)
-		
+
+			function UpdateTextBox(textbox, newText)
+		for i,v in pairs(boxes) do
+		    if textbox == v then
+			TextBox.Text = newText
+		    end
+		end
+	end)
 		UICorner_13.CornerRadius = UDim.new(0, 5)
 		UICorner_13.Parent = TextBox
 		return text
 	end
+
 
 	function UI:CreateDropDown(dropdownText, listOfElements, forTab, callback)
 		local DropDownFrame = Instance.new("Frame")

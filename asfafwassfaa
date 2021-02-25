@@ -772,7 +772,7 @@ table.insert(boxes, textName)
 			Key.Text = ". . ."
 			local a = game:GetService('UserInputService').InputBegan:wait();
 			if a.KeyCode.Name ~= "Unknown" then
-				Key = a.KeyCode.Name
+				Key.Text = a.KeyCode.Name
 				oldKey = a.KeyCode.Name;
 			end
 		end)

@@ -748,7 +748,7 @@ table.insert(boxes, textName)
 		KeyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 		KeyButton.Position = UDim2.new(0.814975917, 0, 0.157894731, 0)
 		KeyButton.Size = UDim2.new(0, 44, 0, 25)
-		KeyButton.TextSize = 20.000
+		KeyButton.TextSize = 15.000
 		KeyButton.Font = Enum.Font.SourceSans
 		KeyButton.Text = oldKey
 		KeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)

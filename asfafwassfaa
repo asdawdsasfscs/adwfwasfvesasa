@@ -716,7 +716,6 @@ table.insert(boxes, textName)
 		local KeyBind = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
 		local Lable = Instance.new("TextLabel")
-		local Key = Instance.new("TextLabel")
 		local KeyButton = Instance.new("TextButton")
 		local UICorner_2 = Instance.new("UICorner")
 
@@ -744,26 +743,15 @@ table.insert(boxes, textName)
 		Lable.TextSize = 17.000
 		Lable.TextXAlignment = Enum.TextXAlignment.Left
 
-		Key.Name = "Key"
-		Key.Parent = KeyBind
-		Key.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Key.BackgroundTransparency = 1.000
-		Key.Position = UDim2.new(0.674911678, 0, 0.157894731, 0)
-		Key.Size = UDim2.new(0, 39, 0, 25)
-		Key.Font = Enum.Font.SourceSans
-		Key.Text = ""
-		Key.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Key.TextSize = 17.000
-
 		KeyButton.Name = "KeyButton"
 		KeyButton.Parent = KeyBind
 		KeyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 		KeyButton.Position = UDim2.new(0.814975917, 0, 0.157894731, 0)
 		KeyButton.Size = UDim2.new(0, 44, 0, 25)
+		KeyButton.TextSize = 20.000
 		KeyButton.Font = Enum.Font.SourceSans
 		KeyButton.Text = oldKey
 		KeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		KeyButton.TextSize = 16.000
 
 		UICorner_2.CornerRadius = UDim.new(0, 5)
 		UICorner_2.Parent = KeyButton

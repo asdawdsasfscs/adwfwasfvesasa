@@ -761,9 +761,9 @@ table.insert(boxes, textName)
 		KeyButton.Position = UDim2.new(0.814975917, 0, 0.157894731, 0)
 		KeyButton.Size = UDim2.new(0, 44, 0, 25)
 		KeyButton.Font = Enum.Font.SourceSans
-		KeyButton.Text = text
+		KeyButton.Text = "Change Bind"
 		KeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		KeyButton.TextSize = 14.000
+		KeyButton.TextSize = 10.000
 
 		UICorner_2.CornerRadius = UDim.new(0, 5)
 		UICorner_2.Parent = KeyButton

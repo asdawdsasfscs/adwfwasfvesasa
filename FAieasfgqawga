@@ -6,35 +6,35 @@ local DefaultTheme = {
 }
 local Objects = {}
 local Themes = {
-    OrangeTheme = {
+    Orange = {
         gameNameTheme = Color3.fromRGB(255, 157, 0),
         buttonColor = Color3.fromRGB(255, 157, 0)
     },
-    BlueTheme = {
+    Blue = {
         gameNameTheme = Color3.fromRGB(0, 110, 255),
         buttonColor = Color3.fromRGB(0, 110, 255)
     },
-    GreenTheme = {
+    Green = {
         gameNameTheme = Color3.fromRGB(45, 255, 0),
         buttonColor = Color3.fromRGB(45, 255, 0)
     },
-    PinkTheme = {
+    Pink = {
         gameNameTheme = Color3.fromRGB(255, 0, 243),
         buttonColor = Color3.fromRGB(255, 0, 243)
     },
-    PurpleTheme = {
+    Purple = {
         gameNameTheme = Color3.fromRGB(170, 20, 255),
         buttonColor = Color3.fromRGB(170, 20, 255)
     },
-    TealTheme = {
+    Teal = {
         gameNameTheme = Color3.fromRGB(0, 251, 255),
         buttonColor = Color3.fromRGB(0, 251, 255)
     },
-    RedTheme = {
+    Red = {
         gameNameTheme = Color3.fromRGB(255, 0, 0),
         buttonColor = Color3.fromRGB(255, 0, 0)
     },
-    YellowTheme = {
+    Yellow = {
         gameNameTheme = Color3.fromRGB(255, 255, 0),
         buttonColor = Color3.fromRGB(255, 255, 0)
     },
@@ -54,7 +54,7 @@ function UI:Main(uiName, gameName, keyBind, themeName)
     if not themeList then
         themeList = DefaultTheme
     end
-	themeList = themeName and Themes[themeName] or Themes.BlueTheme
+	themeList = themeName and Themes[themeName] or Themes.Blue
     local AcentHubOrange = Instance.new("ScreenGui")
     local MainFrame = Instance.new("Frame")
     local UICorner = Instance.new("UICorner")

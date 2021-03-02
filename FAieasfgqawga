@@ -1,4 +1,3 @@
-
 local UI = {}
 
 local DefaultTheme = {
@@ -750,7 +749,7 @@ function UI:Main(uiName, gameName, keyBind, themeName)
                 KeyBind_2.Size = UDim2.new(0, 32, 0, 19)
                 KeyBind_2.Font = Enum.Font.SourceSans
                 KeyBind_2.Text = ""..oldKey
-                KeyBind_2.TextColor3 = themeList.buttonColor
+                KeyBind_2.TextColor3 = Color3.fromRGB(255, 255, 255)
                 KeyBind_2.TextSize = 16.000
                 KeyBind_2.MouseButton1Click:Connect(function(e)
                     FirstKeyCode = false

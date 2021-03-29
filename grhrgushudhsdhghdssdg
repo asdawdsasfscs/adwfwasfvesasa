@@ -1,44 +1,8 @@
 local UI = {}
 
-local DefaultTheme = {
-    gameNameTheme = Color3.fromRGB(255, 157, 0),
-    buttonColor = Color3.fromRGB(255, 157, 0)
-}
+
 local Objects = {}
-local Themes = {
-    OrangeTheme = {
-        gameNameTheme = Color3.fromRGB(255, 157, 0),
-        buttonColor = Color3.fromRGB(255, 157, 0)
-    },
-    BlueTheme = {
-        gameNameTheme = Color3.fromRGB(0, 110, 255),
-        buttonColor = Color3.fromRGB(0, 110, 255)
-    },
-    GreenTheme = {
-        gameNameTheme = Color3.fromRGB(45, 255, 0),
-        buttonColor = Color3.fromRGB(45, 255, 0)
-    },
-    PinkTheme = {
-        gameNameTheme = Color3.fromRGB(255, 0, 243),
-        buttonColor = Color3.fromRGB(255, 0, 243)
-    },
-    PurpleTheme = {
-        gameNameTheme = Color3.fromRGB(170, 20, 255),
-        buttonColor = Color3.fromRGB(170, 20, 255)
-    },
-    TealTheme = {
-        gameNameTheme = Color3.fromRGB(0, 251, 255),
-        buttonColor = Color3.fromRGB(0, 251, 255)
-    },
-    RedTheme = {
-        gameNameTheme = Color3.fromRGB(255, 0, 0),
-        buttonColor = Color3.fromRGB(255, 0, 0)
-    },
-    YellowTheme = {
-        gameNameTheme = Color3.fromRGB(255, 255, 0),
-        buttonColor = Color3.fromRGB(255, 255, 0)
-    },
-}
+
 local function ApplyFrameResizingLib(scrollingframe)
 	local calc = scrollingframe:FindFirstChild("UIGridLayout") or scrollingframe:FindFirstChild("UIListLayout") or nil;
 	local function update()
@@ -50,11 +14,7 @@ local function ApplyFrameResizingLib(scrollingframe)
 	calc.Changed:Connect(update)
 	update()
 end
-function UI:Main(uiName, keyBind, themeName)
-    if not themeList then
-        themeList = DefaultTheme
-    end
-	themeList = themeName and Themes[themeName] or Themes.BlueTheme
+function UI:Main(uiName, keyBind)
     local WildArk = Instance.new("ScreenGui")
     local MainFrame = Instance.new("Frame")
     local UICorner = Instance.new("UICorner")
@@ -252,7 +212,7 @@ function UI:Main(uiName, keyBind, themeName)
         tabName = tabName or "Tab"
 
         TabButton.Name = "TabButton"
-        TabButton.Parent = game.StarterGui.WildArk.MainFrame.TabsFrame.MainTabsFrame
+        TabButton.Parent = MainTabsFrame
         TabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         TabButton.BackgroundTransparency = 1.000
         TabButton.Position = UDim2.new(0.0351758786, 0, 0, 0)
@@ -263,7 +223,7 @@ function UI:Main(uiName, keyBind, themeName)
         TabButton.TextSize = 14.000
 
         Page.Name = "Page"
-        Page.Parent = game.StarterGui.WildArk.MainFrame
+        Page.Parent = MainFrame
         Page.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
         Page.BorderColor3 = Color3.fromRGB(60, 60, 60)
         Page.Position = UDim2.new(0.0235602092, 0, 0.203007519, 0)
@@ -321,7 +281,7 @@ function UI:Main(uiName, keyBind, themeName)
                 toggleName = toggleName or "Toggle"
 
                 Toggle.Name = "Toggle"
-                Toggle.Parent = game.StarterGui.WildArk.MainFrame.Page
+                Toggle.Parent = Page
                 Toggle.Active = true
                 Toggle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
                 Toggle.Position = UDim2.new(0.0284090918, 0, 0.430851072, 0)
@@ -559,7 +519,7 @@ function UI:Main(uiName, keyBind, themeName)
                 
             end
             ]]
-            
+
             function Elements:Slider(maxvalue, minvalue, sliderName, callback)
                 local Slider = Instance.new("Frame")
                 local UICorner = Instance.new("UICorner")
@@ -576,7 +536,7 @@ function UI:Main(uiName, keyBind, themeName)
                 sliderName = sliderName or "Slider"
                 
                 Slider.Name = "Slider"
-                Slider.Parent = game.StarterGui.WildArk.MainFrame.Page
+                Slider.Parent = Page
                 Slider.Active = true
                 Slider.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
                 Slider.Position = UDim2.new(0.0284090918, 0, 0.287234038, 0)
@@ -705,7 +665,7 @@ function UI:Main(uiName, keyBind, themeName)
 
                 labelText = labelText or "Text Label"
 
-                TextLabel.Parent = game.StarterGui.WildArk.MainFrame.Page
+                TextLabel.Parent = Page
                 TextLabel.Active = true
                 TextLabel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
                 TextLabel.Position = UDim2.new(0.0284090918, 0, 0.71808511, 0)
@@ -762,7 +722,7 @@ function UI:Main(uiName, keyBind, themeName)
                 callback = callback or function () end
                 KeyBind.Name = "KeyBind"
                 KeyBind.Name = "KeyBind"
-                KeyBind.Parent = game.StarterGui.WildArk.MainFrame.Page
+                KeyBind.Parent = Page
                 KeyBind.Active = true
                 KeyBind.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
                 KeyBind.Position = UDim2.new(0.0284090918, 0, 0, 0)
@@ -834,7 +794,7 @@ function UI:Main(uiName, keyBind, themeName)
 
 
                 Starter.Name = "Starter"
-                Starter.Parent = game.StarterGui.WildArk.MainFrame.Page
+                Starter.Parent = Page
                 Starter.Active = true
                 Starter.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
                 Starter.BackgroundTransparency = 1.000
@@ -855,7 +815,7 @@ function UI:Main(uiName, keyBind, themeName)
                 textboxPlaceHolder = textboxPlaceHolder or "Type!"
 
                 TextBox.Name = "TextBox"
-                TextBox.Parent = game.StarterGui.WildArk.MainFrame.Page
+                TextBox.Parent = Page
                 TextBox.Active = true
                 TextBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
                 TextBox.Position = UDim2.new(0.0284090918, 0, 0.143617019, 0)
@@ -908,7 +868,7 @@ function UI:Main(uiName, keyBind, themeName)
                 
                 
                 Button.Name = "Button"
-                Button.Parent = game.StarterGui.WildArk.MainFrame.Page
+                Button.Parent = Page
                 Button.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
                 Button.Position = UDim2.new(0.0284090918, 0, 0.71808511, 0)
                 Button.Size = UDim2.new(0, 335, 0, 24)

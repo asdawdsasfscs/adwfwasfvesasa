@@ -591,11 +591,11 @@ function UI:Main(uiName, keyBind)
                 UICorner_5.CornerRadius = UDim.new(0, 5)
                 UICorner_5.Parent = MainSlider
                 
-                local Toggled = false
+                local Toggled, Value = false
                 SliderToggle.MouseButton1Click:Connect(function()
 					Toggled = not Toggled
 					Objects[SliderToggle] = Toggled
-					pcall(callback, Toggled)
+					pcall(callback, Value, Toggled)
                     if Toggled then
                         game.TweenService:Create(SliderToggle, TweenInfo.new(.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
                             BackgroundColor3 = Color3.fromRGB(49, 114, 255)
@@ -632,18 +632,18 @@ function UI:Main(uiName, keyBind)
                 callback = callback or function() end
                 max.MouseButton1Down:Connect(function()
                     Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 140) * bar.AbsoluteSize.X) + tonumber(minvalue)) or 0
-					pcall(callback, Value)
+					pcall(callback, Value, Toggled)
                     bar:TweenSize(UDim2.new(0, math.clamp(mouse.X - bar.AbsolutePosition.X, 0, 140), 0, 17), "InOut", "Linear", 0.05, true)
                     runconnection = game:GetService("RunService").Heartbeat:Connect(function()
                         val.Text = Value
                         Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 140) * bar.AbsoluteSize.X) + tonumber(minvalue))
-						pcall(callback, Value)
+						pcall(callback, Value, Toggled)
                         bar:TweenSize(UDim2.new(0, math.clamp(mouse.X - bar.AbsolutePosition.X, 0, 140), 0, 17), "InOut", "Linear", 0.05, true)
                     end)
                     releaseconnection = uis.InputEnded:Connect(function(Mouse)
                         if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
                             Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 140) * bar.AbsoluteSize.X) + tonumber(minvalue))
-							pcall(callback, Value)
+							pcall(callback, Value, Toggled)
                             val.Text = Value
                             bar:TweenSize(UDim2.new(0, math.clamp(mouse.X - bar.AbsolutePosition.X, 0, 140), 0, 17), "InOut", "Linear", 0.05, true)
                             runconnection:Disconnect()

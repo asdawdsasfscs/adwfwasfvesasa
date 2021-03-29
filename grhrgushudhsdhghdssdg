@@ -559,7 +559,7 @@ function UI:Main(uiName, keyBind)
                 
                 SliderToggle.Name = "SliderToggle"
                 SliderToggle.Parent = Slider
-                SliderToggle.BackgroundColor3 = Color3.fromRGB(49, 114, 255)
+                SliderToggle.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
                 SliderToggle.Position = UDim2.new(0.934880257, 0, 0.125, 0)
                 SliderToggle.Size = UDim2.new(0, 17, 0, 17)
                 SliderToggle.Font = Enum.Font.SourceSans

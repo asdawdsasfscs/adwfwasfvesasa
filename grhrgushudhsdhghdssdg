@@ -255,7 +255,7 @@ function UI:Main(uiName, keyBind)
             end
             Page.Visible = true
             for i, v in pairs(MainTabsFrame:GetChildren()) do
-                if not v:IsA("UIGridLayout") then
+                if not v:IsA("UIGridLayout") or v:IsA("UICorner") then
                     v.TextColor3 = Color3.fromRGB(143, 143, 143)
                 end
             end

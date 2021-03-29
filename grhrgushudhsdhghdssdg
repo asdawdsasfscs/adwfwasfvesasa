@@ -26,7 +26,6 @@ function UI:Main(uiName, keyBind)
     local MainTabsFrame = Instance.new("Frame")
     local UICorner_4 = Instance.new("UICorner")
     local UIListLayout = Instance.new("UIListLayout")
-    local UICorner_5 = Instance.new("UICorner")
     local Hider = Instance.new("Frame")
     local UICorner_6 = Instance.new("UICorner")
     local allPages = Instance.new("Folder")
@@ -652,6 +651,8 @@ function UI:Main(uiName, keyBind)
                         end
                     end)
                 end)
+
+                pcall(callback, Value, Toggled)
                 return Value
             end
 
@@ -844,9 +845,9 @@ function UI:Main(uiName, keyBind)
                 TextInput.Size = UDim2.new(0, 69, 0, 17)
                 TextInput.Font = Enum.Font.SourceSans
                 TextInput.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+                TextInput.TextColor3 = Color3.fromRGB(255, 255, 255)
                 TextInput.PlaceholderText = "Type!!"
                 TextInput.Text = ""
-                TextInput.TextColor3 = Color3.fromRGB(0, 0, 0)
                 TextInput.TextSize = 14.000
                 
                 UICorner_2.CornerRadius = UDim.new(0, 5)

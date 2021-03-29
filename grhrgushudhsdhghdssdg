@@ -576,6 +576,7 @@ function UI:Main(uiName, keyBind)
                 SliderBackground.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
                 SliderBackground.Position = UDim2.new(0.484806001, 0, 0.125, 0)
                 SliderBackground.Size = UDim2.new(0, 140, 0, 17)
+                SliderBackground.Text = ""
                 
                 UICorner_3.CornerRadius = UDim.new(0, 5)
                 UICorner_3.Parent = SliderBackground
